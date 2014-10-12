@@ -1,0 +1,16 @@
+{
+  "name": "PI",
+  "version": "0.0.0",
+  "authors": [
+    "jeffersonmourak <jefinho.moura14@gmail.com>"
+  ],
+  "description": "Video player in CustomElement, and a design based On CSS",
+  "keywords": [
+    "WebComponents",
+    "Video-player"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "~0.4.2"
+  }
+}

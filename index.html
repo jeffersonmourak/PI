@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>&pi; player</title>
+	<script src="bower_components/platform/platform.js"></script>
+	<link rel="import" href="bower_components/polymer/polymer.html">
+	<link rel="import" href="pi.html">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+	<header class="mainHeader">
+		<h1>&pi;</h1>
+	</header>
+	<article class='content'>
+		<p>O &pi; é um player interativo baseado no video element do HTML5 e no polyfill Polymer da Google, a ideia principal do &pi; é oferecer todos os recursos do embed do YouTube mas te deixar livre para estilizar seu player como quiser.<br> com ele você pode fazer muitas interações com os vídeos.</p>
+		<p>Assitir os vídeos diretamente do youtube sem a necessidade de utilizar o player do youtube, basta adicionar o elemento &quot;youtube&quot; com o id do vídeo e pronto, o vídeo será carredado diretamente do youtbe</p>
+		<div class="player">
+			<pi-player id='youtubePlayer' youtube="pXIMyPJtg-o"></pi-player>
+		</div>
+		<p>Carregar vídeos locais em MP4 e WEBM</p>
+		<div class="player">
+			<pi-player id='localPlayer' mpFourVideo="assets/videos/a.mp4" webmVideo="assets/videos/a.webm"></pi-player>
+		</div>
+		<p>Adicionar anotações durante o vídeo</p>
+		<div class="player">
+			<pi-player id='localPlayer2' mpFourVideo="assets/videos/a.mp4" webmVideo="assets/videos/a.webm"></pi-player>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded",function(){
+				console.log("hey")
+				var player2 = document.querySelector("#localPlayer2");
+				window.addEventListener('polymer-ready', function(e) {
+					pi.setAnnotation("#localPlayer2",{
+						start : "0:4",
+						end : "0:7",
+						parameters : {
+							text : "Ops, Não é no YouTube Não",
+							width : "250px",
+							height : "auto",
+							top : "164.5px",
+							left : "183.5px",
+							style : {
+								background : "rgba(255,0,0,0.7)",
+								foreColor : "rgba(255,255,255,1)"
+							}
+						}
+					});
+				});
+			},false);
+		</script>
+		<p>Além de deixar poder deixar o player com a sua cara, alterando apenas um arquivo.</p>
+		<h3>Como functiona?</h3>
+		<p>Para a dicionar o player a sua página basta baixar o projeto no GitHub, depois de baixar você deve importar os arquivos do Polymer ao seu site, usando: <br><pre><<span>script</span> src="bower_components/platform/platform.js"><<span>/script</span>><br><<span>link</span> rel="import" href="bower_components/polymer/polymer.html"></pre>
+		depois deve ser importado o gerador do player <br>
+		<pre><<span>link</span> rel="import" href="pi.html"></pre>
+		</p>
+		<p>e por fim criar seu player<br>
+		<pre><<span>pi-player</span>> <<span>/pi-player</span>></pre>
+		</p>
+		<h3>Usando as funcionalidades</h3>
+		<h4>Pegando um vídeo do YouTube</h4>
+		para importar um vídeo do youtube você só precisa do video ID que fica na barra de endereços depois de <pre>http://youtube.com/watch?v=</pre>esse valor vai ser adicionado no atributo <pre>youtube</pre> do &pi; assim:<br>
+		<pre><<span>pi-player youtube="videoID"</span>> <<span>/pi-player</span>></pre>
+		<h4>Pegando um vídeo do meu servidor</h4>
+		<p>O &pi; atualmente suporta os arquivos no formato MP4 e WEBM, para adiciona-los ao player é assim: 
+		<pre><<span>pi-player mpFourVideo="path/of/video.mp4" webmVideo="path/of/video.webm"</span>> <<span>/pi-player</span>></pre>
+		e pronto!</p>
+		<h4>Adicionando uma anotação no vídeo.</h4>
+		<p>Para se adicionar uma anotação você usa o JavaScript com o objeto pi. veja o exemplo
+		<pre><<span>script</span>>
+		<br>pi.setAnnotation("seletorCSS",{<br>
+	start : "0:4", //tempo inicial<br>
+	end : "0:7", //tempo final<br>
+	parameters : {<br>
+		text : "Ops, Não é no YouTube Não", //texto da anotação<br>
+		width : "250px", //largura da anotação<br>
+		height : "auto", //altura da anotação<br>
+		top : "164.5px", //distancia do topo<br>
+		left : "183.5px", //distancia da esquerda<br>
+		style : {<br>
+			background : "rgba(255,0,0,0.7)",//cor do plano de fundo<br>
+			foreColor : "rgba(255,255,255,1)" //cor do texto<br>
+		}<br>
+	}});<br>
+<<span>/script</span>></pre>
+		</p>
+	</article>
+	<footer>Developed by <a target="blank" href="http://github.com/jeffersonmourak/">Jefferson Moura</a> | <a target="blank" href="http://opensource.org/licenses/MIT">Under MIT licence</a> </footer>
+</body>
+</html>
