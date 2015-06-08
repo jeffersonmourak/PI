@@ -2,6 +2,6 @@
     "title": "&pi;",
     "image": "./PI/icon.png",
     "description": "O &pi; é um player interativo baseado no video element do HTML5 e no polyfill Polymer da Google",
-    "version": "0.0.1",
+    "version": "0.0.9",
     "index" : "index.html"
 }
