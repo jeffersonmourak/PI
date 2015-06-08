@@ -1,0 +1,28 @@
+{
+  "name": "pi",
+  "version": "0.0.9",
+  "homepage": "https://github.com/jeffersonmourak/pi",
+  "authors": [
+    "jeffersonmourak"
+  ],
+  "description": "PI is a custom player based on web components",
+  "keywords": [
+    "PI",
+    "Web",
+    "Components",
+    "Polymer",
+    "jeffersonmourak"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
