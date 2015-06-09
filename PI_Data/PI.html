@@ -1,24 +1,37 @@
+<script>
+	
+	window.Polymer = window.Polymer || {};
+	window.Polymer.dom = 'shadow';
+
+</script>
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<script src="pi.js" ></script>
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<script src="pi.js"></script>
+
 <dom-module id="pi-player">
     <link rel="import" type="css" href="pi-theme.css">
     <template>
         <div class="player">
-            <content></content>
-            <div class="status-bar">
-                <div class="progress">
-                    <div class="indicator"></div>
+        	<video id="player"></video>
+            <div id="controls" class="controls">
+                <div id="progressBar" class="progress">
+                    <div id="progressBarIndicator" class="indicator"></div>
                 </div>
             </div>
         </div>
     </template>
 </dom-module>
+
 <script>
 (function() {
     "use strict";
     Polymer({
         is: "pi-player",
-        ready: PiElementReady,
+        ready: PiData,
+        properties: {
+            youtube: String,
+            server: String,
+        }
     });
 }());
 </script>
