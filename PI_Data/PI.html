@@ -1,25 +1,24 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-
+<script src="pi.js" ></script>
 <dom-module id="pi-player">
-
-	<link rel="stylesheet" href="pi-theme.css">
-
-	<template>
-		<div>
-			<content></content>
-		</div>
-	</template>
-
+    <link rel="import" type="css" href="pi-theme.css">
+    <template>
+        <div class="player">
+            <content></content>
+            <div class="status-bar">
+                <div class="progress">
+                    <div class="indicator"></div>
+                </div>
+            </div>
+        </div>
+    </template>
 </dom-module>
-
 <script>
-	
-	Polymer({
-		is: "pi-player",
-		ready: function(){
-			//var piPlayer = this;
-			//Polymer.dom(piPlayer);
-		}
-	});
-
+(function() {
+    "use strict";
+    Polymer({
+        is: "pi-player",
+        ready: PiElementReady,
+    });
+}());
 </script>
