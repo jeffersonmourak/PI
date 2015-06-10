@@ -5,12 +5,17 @@ O π é um player interativo baseado no video element do HTML5 e no polyfill Pol
 ## Instalação ##
 Para ter o Pi em seu site você precisa baixar as dependencias do Polymer, Para isso baixe o projeto e entre na pasta do projeto
 em seguida use o comando
+
 ``` $ bower install ```
+
 no terminal ou no CMD
 
 Após isso é só adicionar o script do **webcomponents.js** no seu projeto
+
 ``` <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script> ```
+
 e em seguida importar o PI em sua aplicação
+
 ``` <link rel="import" href="PI_Data/PI.html"> ```
 
 depois disso é só adicionar o player no seu código HTML, quantas vezes quiser
