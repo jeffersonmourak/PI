@@ -9,7 +9,13 @@
 </head>
 
 <body>
-    <pi-player youtube="rgemU-kMvOE"></pi-player>
+    <pi-player id="player1" youtube="rgemU-kMvOE"></pi-player>
+	<script>
+		var piPlayer1 = document.querySelector("#player1");
+		piPlayer1.control.layout.play(">");
+		piPlayer1.control.layout.pause("| |");
+		piPlayer1.control.play();
+	</script>
 </body>
 
 </html>

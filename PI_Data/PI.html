@@ -1,27 +1,31 @@
 <script>
-	
-	window.Polymer = window.Polymer || {};
-	window.Polymer.dom = 'shadow';
-
+window.Polymer = window.Polymer || {};
+window.Polymer.dom = 'shadow';
 </script>
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <script src="pi.js"></script>
-
 <dom-module id="pi-player">
     <link rel="import" type="css" href="pi-theme.css">
     <template>
         <div class="player">
-        	<video id="player"></video>
+            <video class="display" id="player"></video>
             <div id="controls" class="controls">
-                <div id="progressBar" class="progress">
-                    <div id="progressBarIndicator" class="indicator"></div>
+            	<div class="playControl">
+            		<div id="play" class="button play"></div>
+            		<div id="pause" style="display:none;" class="button pause"></div>
+            	</div>
+                <div class="progressControl">
+                    <div id="progressBar" class="progress">
+                        <div id="progressBarIndicator" class="indicator"></div>
+                        <div class="buffer" id="buffer"></div>
+                        <div class="watched" id="watched"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </template>
 </dom-module>
-
 <script>
 (function() {
     "use strict";
