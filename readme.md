@@ -22,7 +22,7 @@ You have two ways to use the PI.
 
 Getting the video from youtube
 ``` 
-	<pi-player id="player1" youtube="ID_DO_VÍDEO"></pi-player> 
+	<pi-player id="player1" youtube="VIDEO_ID"></pi-player> 
 ```
 
 Getting the a local source
