@@ -53,11 +53,12 @@ function PiData() {
         watched = piPlayer.watched,
         progressBar = piPlayer.progressBar,
         progressIndicator = piPlayer.progressBarIndicator;
+        sources = element.children;
 
-    if (youtube === undefined || youtube == "") {
+    if ( (youtube === undefined || youtube == "") && sources.length == 0) {
         console.error("Error 1, Please insert the video Code to use the element")
         controls.style.display = "none";
-    } else {
+    } else if(youtube) {
         var ironAjax = document.createElement("iron-ajax");
         ironAjax.setAttribute("auto", "");
         ironAjax.setAttribute("url", "http://jeffersonmourak.com/yt.php?v=" + youtube);
@@ -67,6 +68,16 @@ function PiData() {
 
         ironAjax.addEventListener("response", loadVideo, false);
 
+    }
+    else{
+            
+        for(var i in sources){
+            var source = sources[i];
+            var newSource = document.createElement("source");
+            newSource.src = source.src;
+            newSource.type = source.type;
+            piPlayer.player.appendChild(newSource);
+        }
     }
 
     play.addEventListener("click", playVideo, false);
