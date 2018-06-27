@@ -1,6 +1,8 @@
 # ENGLISH VERSION #
 # PI Player v0.9 #
 
+**[DEPRECATED]**
+
 The π is a interactive player based in HTML5 Video Element and Google's Polymer, The main idea is offers all youtube's features of a embed video, but let you free to stylize as you wish.
 
 ## Install ##
